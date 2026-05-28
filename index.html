@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEGATHERIA WORDLE - Fauna de Luján</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="contenedor-principal">
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-contenido">
+                <h1>MEGATHERIA WORDLE</h1>
+                <p class="subtitulo">Adivina la fauna de Luján</p>
+                <p class="creditos">LABEV - Universidad Nacional de Luján</p>
+            </div>
+            <button id="btnEstadisticas" class="btn-iconico">📊</button>
+        </header>
+
+        <!-- MAIN GAME -->
+        <main class="main-juego">
+            <!-- SECCIÓN IZQUIERDA: JUEGO -->
+            <div class="seccion-juego">
+                <!-- CONTADOR DE INTENTOS -->
+                <div class="contador-intentos">
+                    <p>Intentos: <span id="intentosActuales">0</span> / 10</p>
+                    <div class="barra-intentos">
+                        <div id="barraProg" class="barra-progreso"></div>
+                    </div>
+                </div>
+
+                <!-- BÚSQUEDA CON AUTOCOMPLETADO -->
+                <div class="contenedor-busqueda">
+                    <input 
+                        type="text" 
+                        id="inputBusqueda" 
+                        placeholder="Escribe el nombre de un animal..." 
+                        class="input-busqueda"
+                    >
+                    <div id="autocompletado" class="autocompletado"></div>
+                </div>
+
+                <!-- TABLA DE INTENTOS -->
+                <div class="tabla-intentos">
+                    <div id="intentosList" class="intentos-list"></div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN DERECHA: FAUNA LUJANENSE -->
+            <aside class="fauna-panel">
+                <h2>🦁 FAUNA LUJANENSE</h2>
+                <div id="faunaGrid" class="fauna-grid"></div>
+            </aside>
+        </main>
+    </div>
+
+    <!-- MODAL: FICHA TÉCNICA FINAL -->
+    <div id="modalFicha" class="modal hidden">
+        <div class="modal-contenido">
+            <button class="btn-cerrar" onclick="cerrarModal()">✕</button>
+            <div id="fichaTecnica" class="ficha-tecnica"></div>
+            <div class="modal-botones">
+                <button id="btnCompartir" class="btn-compartir">📤 Compartir Puntaje</button>
+                <button onclick="reiniciarPartida()" class="btn-reiniciar">🔄 Nueva Partida</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: ESTADÍSTICAS -->
+    <div id="modalEstadisticas" class="modal hidden">
+        <div class="modal-contenido modal-stats">
+            <button class="btn-cerrar" onclick="cerrarModalStats()">✕</button>
+            <h2>📊 ESTADÍSTICAS</h2>
+            <div id="estadisticasContenido" class="stats-contenido"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
